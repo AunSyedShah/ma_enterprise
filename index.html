@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mashallah Enterprises | Cold Chain &amp; Hot Kitchen Solutions</title>
+<meta name="description" content="Commercial refrigeration and hot kitchen equipment, spare parts, repair and maintenance contracts in Rawalpindi.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F2559'/%3E%3Cpath d='M6 24V8l7 10 7-10v16' fill='none' stroke='%23D2AE66' stroke-width='2.5'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { 50:'#EDF0F8', 100:'#DCE2F0', 200:'#B7C2DD', 500:'#5873B5', 600:'#3A5BA6', 700:'#244590', 800:'#173474', 900:'#0F2559', 950:'#091A40' },
+          gold: { 200:'#EFDDB0', 300:'#E3C98F', 400:'#D2AE66', 500:'#B8924A', 700:'#7E5F28' },
+          ice: '#5BB8E8',
+          ember: '#E0572F',
+          mist: '#EDF0F6',
+          line: '#D5DBE7'
+        },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          sans: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+  body { background: #F7F8FB; color: #0F2559; font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .num { font-variant-numeric: tabular-nums; }
+  :focus-visible { outline: 2px solid #D2AE66; outline-offset: 2px; }
+  .gauge-track { background: linear-gradient(90deg, #5BB8E8 0%, #A9D8F0 24%, #D9D2BF 46%, #F0A266 70%, #E0572F 100%); }
+  .gauge-thumb { transition: left .35s cubic-bezier(.3,.8,.3,1); }
+  .gold-rule { background: linear-gradient(90deg, transparent, #D2AE66 30%, #D2AE66 70%, transparent); height: 1px; }
+  .drawer { transition: transform .3s cubic-bezier(.3,.8,.3,1); }
+  .scrim { transition: opacity .25s ease; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .gauge-thumb, .drawer, .scrim { transition: none; }
+  }
+</style>
+</head>
+
+<body class="min-h-screen">
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-chiller" viewBox="0 0 64 64"><rect x="14" y="6" width="36" height="50" rx="3"/><rect x="18" y="10" width="28" height="42" rx="1"/><path d="M20 22h24M20 34h24M20 46h24M18 56v3M46 56v3"/></symbol>
+    <symbol id="i-freezer" viewBox="0 0 64 64"><rect x="12" y="6" width="40" height="52" rx="3"/><path d="M12 32h40M44 14v10M44 40v10M18 58v2M46 58v2"/><path d="M22 18l8 0M26 14v8"/></symbol>
+    <symbol id="i-under" viewBox="0 0 64 64"><rect x="6" y="20" width="52" height="34" rx="3"/><path d="M6 28h52M22 28v26M42 28v26M17 38v6M37 38v6M52 38v6M10 54v4M54 54v4"/></symbol>
+    <symbol id="i-coldroom" viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="42" rx="2"/><rect x="25" y="28" width="14" height="28"/><path d="M6 22h52M36 40v4"/></symbol>
+    <symbol id="i-fryer" viewBox="0 0 64 64"><rect x="10" y="28" width="44" height="26" rx="2"/><path d="M16 28V18h12v10M36 28V18h12v10M20 18l-8-6M44 18l8-6M18 54v4M46 54v4"/><path d="M24 40h16M24 46h16"/></symbol>
+    <symbol id="i-griddle" viewBox="0 0 64 64"><rect x="6" y="26" width="52" height="10" rx="1"/><path d="M10 36v-6M54 36v-6"/><rect x="8" y="36" width="48" height="14" rx="1"/><circle cx="18" cy="43" r="3"/><circle cx="32" cy="43" r="3"/><circle cx="46" cy="43" r="3"/><path d="M12 50v8M52 50v8"/></symbol>
+    <symbol id="i-warmer" viewBox="0 0 64 64"><rect x="6" y="34" width="52" height="18" rx="2"/><rect x="10" y="26" width="12" height="8"/><rect x="26" y="26" width="12" height="8"/><rect x="42" y="26" width="12" height="8"/><path d="M16 12c-3 3 3 5 0 8M32 12c-3 3 3 5 0 8M48 12c-3 3 3 5 0 8M12 52v6M52 52v6"/></symbol>
+    <symbol id="i-shawarma" viewBox="0 0 64 64"><path d="M32 4v52"/><path d="M22 16l10-4 10 4-3 28H25z"/><path d="M14 58h36M16 28h4M16 38h4M44 28h4M44 38h4"/></symbol>
+    <symbol id="i-compressor" viewBox="0 0 64 64"><rect x="16" y="16" width="32" height="34" rx="14"/><path d="M26 16V8h6M40 16V6M16 56h32M24 50v6M40 50v6"/><circle cx="32" cy="33" r="5"/></symbol>
+    <symbol id="i-controller" viewBox="0 0 64 64"><rect x="8" y="18" width="48" height="28" rx="3"/><rect x="14" y="24" width="22" height="12" rx="1"/><circle cx="45" cy="28" r="3"/><circle cx="45" cy="38" r="3"/><path d="M14 41h10"/></symbol>
+    <symbol id="i-gasket" viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="7"/><rect x="18" y="18" width="28" height="28" rx="3"/><path d="M8 32h10M46 32h10"/></symbol>
+    <symbol id="i-fan" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><circle cx="32" cy="32" r="4"/><path id="blade" d="M32 28C30 18 34 10 42 12C44 20 40 27 32 28z"/><use href="#blade" transform="rotate(90 32 32)"/><use href="#blade" transform="rotate(180 32 32)"/><use href="#blade" transform="rotate(270 32 32)"/></symbol>
+    <symbol id="i-cylinder" viewBox="0 0 64 64"><rect x="20" y="16" width="24" height="42" rx="9"/><rect x="28" y="6" width="8" height="10"/><path d="M20 28h24M26 6h12"/></symbol>
+    <symbol id="i-burner" viewBox="0 0 64 64"><circle cx="32" cy="42" r="14"/><circle cx="32" cy="42" r="6"/><path d="M32 28V20M20 32l-6-5M44 32l6-5M32 12c-4 4 4 5 0 9"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 64 64"><path d="M40 8a14 14 0 0 0-12 20L8 48a5 5 0 0 0 8 8l20-20A14 14 0 0 0 56 24l-9 8-8-2-2-8 8-9z"/></symbol>
+  </defs>
+</svg>
+
+<!-- Top notice -->
+<div class="bg-navy-950 text-navy-200 text-[13px]">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-2 flex flex-wrap items-center justify-between gap-x-6 gap-y-1">
+    <p>Workshop and showroom: Dokh Hasu, Westage II, Rawalpindi</p>
+    <p class="num">Call a technician <a href="tel:03092851651" class="text-gold-300 font-medium hover:text-gold-200">0309-2851651</a></p>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-line">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center gap-4 lg:gap-8">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="Mashallah Enterprises home">
+      <svg viewBox="0 0 48 48" class="w-10 h-10 bg-navy-900" fill="none" stroke="#D2AE66" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 36V12l9 13 9-13v24"/><path d="M41 15a12 12 0 1 0 0 18"/><path d="M27 24h10"/>
+      </svg>
+      <span class="leading-none">
+        <span class="block font-display font-extrabold tracking-tight text-[15px] sm:text-base">MASHALLAH</span>
+        <span class="block font-mono text-[10px] tracking-[.2em] text-gold-700 mt-1">ENTERPRISES</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-medium" aria-label="Main">
+      <a class="hover:text-navy-600" href="#shop">Shop</a>
+      <a class="hover:text-navy-600" href="#services">Repair &amp; service</a>
+      <a class="hover:text-navy-600" href="#plans">Maintenance plans</a>
+      <a class="hover:text-navy-600" href="#process">How it works</a>
+      <a class="hover:text-navy-600" href="#contact">Contact</a>
+    </nav>
+
+    <form id="searchForm" class="ml-auto hidden md:flex items-center w-full max-w-xs border border-line bg-mist focus-within:border-navy-600" role="search">
+      <label for="searchBox" class="sr-only">Search equipment and parts</label>
+      <svg class="w-4 h-4 ml-3 text-navy-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="searchBox" type="search" placeholder="Search: thermostat, fryer, R404a" class="w-full bg-transparent px-3 py-2 text-sm outline-none placeholder:text-navy-500/70">
+    </form>
+
+    <button id="cartBtn" class="ml-auto md:ml-0 relative flex items-center gap-2 bg-navy-900 text-white px-4 h-10 text-sm font-medium hover:bg-navy-800" aria-label="Open cart">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.8a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+      <span class="hidden sm:inline">Cart</span>
+      <span id="cartCount" class="num min-w-[1.4rem] text-center bg-gold-400 text-navy-950 text-xs font-semibold px-1.5 py-0.5">0</span>
+    </button>
+  </div>
+  <div class="lg:hidden border-t border-line overflow-x-auto no-scrollbar">
+    <nav class="flex gap-6 px-4 sm:px-6 py-2.5 text-sm font-medium whitespace-nowrap" aria-label="Sections">
+      <a href="#shop">Shop</a><a href="#services">Repair &amp; service</a><a href="#plans">Plans</a><a href="#process">How it works</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="bg-navy-950 text-white relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 pt-14 sm:pt-20 pb-10">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+      <div class="lg:col-span-8">
+        <p class="font-mono text-xs tracking-[.22em] text-gold-400 uppercase">Cold chain &amp; hot kitchen solutions</p>
+        <h1 class="font-display font-extrabold tracking-tight leading-[0.98] text-[2.6rem] sm:text-6xl lg:text-7xl mt-5 [text-wrap:balance]">
+          Kitchens run between <span class="text-ice num">&minus;40&deg;C</span> and <span class="text-ember num">250&deg;C</span>. We keep them there.
+        </h1>
+      </div>
+      <div class="lg:col-span-4">
+        <p class="text-navy-200 text-lg leading-relaxed">Refrigeration and hot kitchen equipment, spare parts and on-site repair for restaurants, bakeries, hotels and cold stores. One call covers the whole kitchen.</p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="#shop" class="bg-gold-400 text-navy-950 font-semibold px-5 py-3 hover:bg-gold-300">Shop equipment &amp; parts</a>
+          <a href="#services" class="border border-navy-600 px-5 py-3 font-medium hover:border-gold-400 hover:text-gold-300">Book a technician</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Temperature selector -->
+    <div class="mt-14 border border-navy-700/70 bg-navy-900/60">
+      <div class="px-4 sm:px-8 pt-6">
+        <p class="font-mono text-[11px] tracking-[.2em] uppercase text-navy-200">Pick your operating temperature</p>
+        <div class="relative mt-5">
+          <div id="gauge" role="radiogroup" aria-label="Operating temperature" class="grid grid-cols-6"></div>
+          <div class="relative h-2 rounded-full gauge-track mt-1">
+            <span id="thumb" class="gauge-thumb absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-navy-950 border-2 border-gold-400 pointer-events-none" style="left:8.33%"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-8 px-4 sm:px-8 py-8">
+        <div class="md:col-span-5" aria-live="polite">
+          <p id="gTemp" class="font-display font-extrabold text-6xl sm:text-7xl num leading-none"></p>
+          <h2 id="gName" class="font-display font-bold text-2xl mt-4"></h2>
+          <p id="gText" class="text-navy-200 mt-2 leading-relaxed max-w-md"></p>
+        </div>
+        <div class="md:col-span-7">
+          <p class="font-mono text-[11px] tracking-[.2em] uppercase text-navy-200 mb-3">Typically sold for this range</p>
+          <ul id="gProducts" class="divide-y divide-navy-700/70 border-y border-navy-700/70"></ul>
+          <button id="gShop" class="mt-4 text-gold-300 font-medium hover:text-gold-200 underline underline-offset-4 decoration-gold-500/50"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line border border-line" id="cats"></div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="mx-auto max-w-7xl px-4 sm:px-6 pb-16">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="font-mono text-xs tracking-[.2em] uppercase text-gold-700">Shop</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-2">Equipment and spare parts</h2>
+    </div>
+    <p class="text-sm text-navy-600 max-w-xs">Prices and stock shown here are sample data for the design prototype.</p>
+  </div>
+
+  <div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-y border-line py-4">
+    <div id="filters" class="flex flex-wrap gap-2" role="group" aria-label="Filter by category"></div>
+    <div class="flex items-center gap-3 w-full sm:w-auto">
+      <label for="sortSel" class="text-sm text-navy-600">Sort</label>
+      <select id="sortSel" class="border border-line bg-white px-3 py-2 text-sm w-full sm:w-auto">
+        <option value="featured">Featured</option>
+        <option value="low">Price: low to high</option>
+        <option value="high">Price: high to low</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="activeZone" class="mt-4" hidden></div>
+  <p id="resultCount" class="mt-4 text-sm text-navy-600 num"></p>
+
+  <div id="grid" class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+  <p id="empty" class="hidden mt-10 text-navy-600">Nothing matches that search. Try a shorter word, or call us on 0309-2851651 and we will find the part.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-white border-y border-line">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-16 grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-6">
+      <p class="font-mono text-xs tracking-[.2em] uppercase text-gold-700">Repair &amp; maintenance</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-2 [text-wrap:balance]">Something stopped cooling or won&rsquo;t hold heat? Start here.</h2>
+      <p class="mt-4 text-navy-700 leading-relaxed max-w-xl">We repair and maintain all kinds of refrigeration and hot kitchen equipment. Tell us what is wrong and a technician comes to your site, finds the fault and quotes before any work starts.</p>
+
+      <div class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-0 border-t border-line">
+        <div class="py-5 border-b border-line">
+          <h3 class="font-display font-bold flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-ice"></span>Refrigeration</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-navy-700">
+            <li>Not cooling or cooling slowly</li><li>Ice build-up on the evaporator</li><li>Compressor won&rsquo;t start or trips</li><li>Gas leak and recharge</li><li>Thermostat reading off</li><li>Cold room and chiller servicing</li>
+          </ul>
+        </div>
+        <div class="py-5 border-b border-line">
+          <h3 class="font-display font-bold flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-ember"></span>Hot kitchen</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-navy-700">
+            <li>Fryer won&rsquo;t hold temperature</li><li>Pilot light goes out</li><li>Uneven flame or clogged burner jets</li><li>Griddle and shawarma line repair</li><li>Gas valve and hose checks</li><li>Bain-marie and warmer elements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6">
+      <form id="bookForm" class="bg-navy-900 text-white p-6 sm:p-8" novalidate>
+        <h3 class="font-display font-bold text-2xl">Book a technician visit</h3>
+        <p class="text-navy-200 text-sm mt-1">Fill this in and send it straight to our team on WhatsApp.</p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mt-6">
+          <div>
+            <label for="bName" class="block text-sm text-navy-200 mb-1">Your name</label>
+            <input id="bName" required class="w-full bg-navy-950 border border-navy-700 px-3 py-2.5 outline-none focus:border-gold-400" autocomplete="name">
+          </div>
+          <div>
+            <label for="bPhone" class="block text-sm text-navy-200 mb-1">Phone number</label>
+            <input id="bPhone" required inputmode="tel" placeholder="03XX-XXXXXXX" class="w-full bg-navy-950 border border-navy-700 px-3 py-2.5 outline-none focus:border-gold-400 placeholder:text-navy-500" autocomplete="tel">
+          </div>
+          <div>
+            <label for="bEquip" class="block text-sm text-navy-200 mb-1">Equipment</label>
+            <select id="bEquip" class="w-full bg-navy-950 border border-navy-700 px-3 py-2.5 outline-none focus:border-gold-400">
+              <option>Display chiller</option><option>Upright / deep freezer</option><option>Cold room</option><option>Gas fryer</option><option>Griddle / grill</option><option>Bain-marie / warmer</option><option>Shawarma machine</option><option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="bDate" class="block text-sm text-navy-200 mb-1">Preferred date</label>
+            <input id="bDate" type="date" class="w-full bg-navy-950 border border-navy-700 px-3 py-2.5 outline-none focus:border-gold-400 [color-scheme:dark]">
+          </div>
+          <div class="sm:col-span-2">
+            <label for="bIssue" class="block text-sm text-navy-200 mb-1">What is the problem?</label>
+            <textarea id="bIssue" rows="3" placeholder="Example: Display chiller runs all day but stays at 12&deg;C" class="w-full bg-navy-950 border border-navy-700 px-3 py-2.5 outline-none focus:border-gold-400 placeholder:text-navy-500"></textarea>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="bAddr" class="block text-sm text-navy-200 mb-1">Site address</label>
+            <input id="bAddr" placeholder="Shop / restaurant name, area, Rawalpindi" class="w-full bg-navy-950 border border-navy-700 px-3 py-2.5 outline-none focus:border-gold-400 placeholder:text-navy-500" autocomplete="street-address">
+          </div>
+        </div>
+        <p id="bErr" class="text-ember text-sm mt-3 hidden">Add your name and phone number so we can call you back.</p>
+        <button class="mt-6 w-full sm:w-auto bg-gold-400 text-navy-950 font-semibold px-6 py-3 hover:bg-gold-300">Prepare my request</button>
+
+        <div id="bDone" hidden class="mt-6 border border-gold-500/60 p-4">
+          <p class="font-medium text-gold-300">Your request is ready.</p>
+          <p class="text-sm text-navy-200 mt-1">This prototype does not save forms. Send it to us on WhatsApp to reach the team.</p>
+          <a id="bWa" target="_blank" rel="noopener" class="inline-block mt-3 bg-white text-navy-950 font-semibold px-4 py-2.5 hover:bg-gold-200">Send on WhatsApp</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans" class="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+  <div class="max-w-2xl">
+    <p class="font-mono text-xs tracking-[.2em] uppercase text-gold-700">Annual maintenance</p>
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-2">Service it before it fails on a busy night</h2>
+    <p class="mt-4 text-navy-700 leading-relaxed">Scheduled visits clean condensers, check gas pressure, test thermostats and inspect gas lines across your whole kitchen.</p>
+  </div>
+  <div id="planGrid" class="mt-10 grid md:grid-cols-3 gap-5"></div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="bg-navy-950 text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+    <p class="font-mono text-xs tracking-[.2em] uppercase text-gold-400">How a repair works</p>
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-2 max-w-2xl">Four steps from the first call to a working kitchen</h2>
+    <ol class="mt-10 grid md:grid-cols-4 gap-px bg-navy-700/60 border border-navy-700/60">
+      <li class="bg-navy-950 p-6"><span class="font-mono text-gold-400 text-sm">Step 1</span><h3 class="font-display font-bold text-xl mt-3">Call or book online</h3><p class="text-navy-200 text-sm mt-2 leading-relaxed">Tell us the equipment and the symptom. We tell you when a technician can reach you.</p></li>
+      <li class="bg-navy-950 p-6"><span class="font-mono text-gold-400 text-sm">Step 2</span><h3 class="font-display font-bold text-xl mt-3">Diagnosis on site</h3><p class="text-navy-200 text-sm mt-2 leading-relaxed">The technician tests pressure, temperature and electrical supply and finds the root cause.</p></li>
+      <li class="bg-navy-950 p-6"><span class="font-mono text-gold-400 text-sm">Step 3</span><h3 class="font-display font-bold text-xl mt-3">Quote before work</h3><p class="text-navy-200 text-sm mt-2 leading-relaxed">You see the cost of parts and labour first. Nothing is replaced without your yes.</p></li>
+      <li class="bg-navy-950 p-6"><span class="font-mono text-gold-400 text-sm">Step 4</span><h3 class="font-display font-bold text-xl mt-3">Repair and test</h3><p class="text-navy-200 text-sm mt-2 leading-relaxed">We fix it, run the unit until it reaches setpoint and check back after a few days.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="font-mono text-xs tracking-[.2em] uppercase text-gold-700">What we stand on</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight mt-2">Trust, integrity, innovation, efficiency</h2>
+    </div>
+    <dl class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+      <div class="border-t border-line pt-4"><dt class="font-display font-bold text-xl">Trust</dt><dd class="mt-2 text-navy-700 leading-relaxed">Food and stock are worth money. We treat your equipment as if it were ours.</dd></div>
+      <div class="border-t border-line pt-4"><dt class="font-display font-bold text-xl">Integrity</dt><dd class="mt-2 text-navy-700 leading-relaxed">We quote before we start, and we replace only what is actually faulty.</dd></div>
+      <div class="border-t border-line pt-4"><dt class="font-display font-bold text-xl">Innovation</dt><dd class="mt-2 text-navy-700 leading-relaxed">Digital controllers, better insulation and efficient compressors cut your power bill.</dd></div>
+      <div class="border-t border-line pt-4"><dt class="font-display font-bold text-xl">Efficiency</dt><dd class="mt-2 text-navy-700 leading-relaxed">Parts in stock and a workshop in Rawalpindi mean shorter downtime.</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact" class="bg-navy-950 text-white">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-14 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-5">
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 48 48" class="w-12 h-12 border border-gold-500/60" fill="none" stroke="#D2AE66" stroke-width="2.4" stroke-linejoin="round" aria-hidden="true"><path d="M9 36V12l9 13 9-13v24"/><path d="M41 15a12 12 0 1 0 0 18"/><path d="M27 24h10"/></svg>
+        <div><p class="font-display font-extrabold tracking-tight text-xl">MASHALLAH ENTERPRISES</p><p class="font-mono text-[11px] tracking-[.2em] text-gold-400 mt-1">COLD CHAIN &amp; HOT KITCHEN SOLUTIONS</p></div>
+      </div>
+      <p class="mt-6 text-navy-200 leading-relaxed max-w-md">We deal in all kinds of refrigeration and hot kitchen repair and maintenance, and provide a complete solution from supply to service.</p>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="gold-rule lg:hidden mb-8"></div>
+      <p class="font-display font-bold text-2xl">Adnan Ahmed</p>
+      <p class="text-gold-300">Maintenance Head</p>
+      <dl class="mt-6 grid sm:grid-cols-[7rem_1fr] gap-y-4 text-[15px]">
+        <dt class="text-gold-400 font-medium">Phone</dt>
+        <dd class="flex flex-wrap items-center gap-3"><a href="tel:03092851651" id="phoneTxt" class="num hover:text-gold-300">0309-2851651</a><button data-copy="0309-2851651" class="copy text-xs border border-navy-600 px-2 py-1 hover:border-gold-400">Copy</button></dd>
+        <dt class="text-gold-400 font-medium">Email</dt>
+        <dd class="flex flex-wrap items-center gap-3 min-w-0"><a href="mailto:adnan.ahmed.mughal1998@gmail.com" class="break-all hover:text-gold-300">adnan.ahmed.mughal1998@gmail.com</a><button data-copy="adnan.ahmed.mughal1998@gmail.com" class="copy text-xs border border-navy-600 px-2 py-1 hover:border-gold-400">Copy</button></dd>
+        <dt class="text-gold-400 font-medium">Address</dt>
+        <dd>Dokh Hasu, Westage II, Rawalpindi.</dd>
+      </dl>
+      <a href="https://wa.me/923092851651" target="_blank" rel="noopener" class="inline-block mt-8 bg-gold-400 text-navy-950 font-semibold px-5 py-3 hover:bg-gold-300">Message us on WhatsApp</a>
+    </div>
+  </div>
+  <div class="border-t border-navy-700/60">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 py-5 flex flex-wrap justify-between gap-2 text-xs text-navy-200">
+      <p>&copy; Mashallah Enterprises. Trust | Integrity | Innovation | Efficiency</p>
+      <p>Design prototype. Prices, stock and plans are sample data.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart drawer -->
+<div id="scrim" class="scrim fixed inset-0 z-40 bg-navy-950/60 opacity-0 pointer-events-none"></div>
+<aside id="drawer" class="drawer fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white flex flex-col translate-x-full" aria-label="Shopping cart" aria-hidden="true">
+  <div class="flex items-center justify-between px-5 h-16 border-b border-line shrink-0">
+    <h2 class="font-display font-bold text-xl">Your cart</h2>
+    <button id="closeCart" class="w-9 h-9 grid place-items-center hover:bg-mist" aria-label="Close cart"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div id="cartBody" class="flex-1 overflow-y-auto px-5 py-4"></div>
+  <div id="cartFoot" class="border-t border-line px-5 py-4 shrink-0"></div>
+</aside>
+
+<div id="toast" class="fixed left-4 bottom-4 z-[60] bg-navy-950 text-white text-sm px-4 py-3 border-l-4 border-gold-400 opacity-0 translate-y-2 pointer-events-none transition" style="margin-left:max(0px, env(safe-area-inset-left, 0px))" role="status"></div>
+
+<script>
+(function () {
+  const WA = '923092851651';
+  const fmt = n => 'Rs ' + n.toLocaleString('en-US');
+  const $ = s => document.querySelector(s);
+
+  /* ---------- Catalogue (sample data) ---------- */
+  const P = [
+    { id:'chl4',  name:'Glass-door Display Chiller, 4 ft', cat:'cold', icon:'chiller',  tag:'2 to 8°C',     spec:'400 L · R134a · 220 V',            price:185000, stock:'In stock',  zones:['4'] },
+    { id:'frz2',  name:'Upright Freezer, 2 Door',          cat:'cold', icon:'freezer',  tag:'−18 to −25°C', spec:'600 L · R404a · stainless',        price:240000, stock:'In stock',  zones:['-18'] },
+    { id:'ucc3',  name:'Under-counter Chiller, 3 Door',    cat:'cold', icon:'under',    tag:'2 to 8°C',     spec:'320 L · stainless · auto defrost', price:135000, stock:'In stock',  zones:['4'] },
+    { id:'blast', name:'Blast Freezer Cabinet, 8 Tray',    cat:'cold', icon:'freezer',  tag:'to −40°C',     spec:'8 trays · R404a · 380 V',          price:420000, stock:'On order',  zones:['-40'] },
+    { id:'room',  name:'Cold Room 8 × 8 ft, Insulated Panel', cat:'cold', icon:'coldroom', tag:'−20 to 5°C', spec:'100 mm PUF panel · unit included', price:null,   stock:'Site survey', zones:['-18','4'] },
+    { id:'fry18', name:'Gas Deep Fryer, Twin Basket',      cat:'hot',  icon:'fryer',    tag:'to 190°C',     spec:'18 L · LPG / natural gas',         price:95000,  stock:'In stock',  zones:['180'] },
+    { id:'grd3',  name:'Flat-top Griddle, 3 ft',           cat:'hot',  icon:'griddle',  tag:'to 280°C',     spec:'3 burners · 12 mm plate',          price:120000, stock:'In stock',  zones:['250'] },
+    { id:'bain',  name:'Bain-marie Warmer, 4 Pan',         cat:'hot',  icon:'warmer',   tag:'65 to 90°C',   spec:'Electric · 1/1 GN pans',           price:68000,  stock:'In stock',  zones:['65'] },
+    { id:'shaw',  name:'Shawarma Machine, 3 Burner',       cat:'hot',  icon:'shawarma', tag:'to 250°C',     spec:'LPG · stainless · 60 cm spit',     price:58000,  stock:'On order',  zones:['250'] },
+    { id:'cmp',   name:'Hermetic Compressor, ½ HP',        cat:'parts',icon:'compressor',tag:'R134a',       spec:'Fits most 300–450 L chillers',     price:22500,  stock:'In stock',  zones:['-18','4'] },
+    { id:'ctl',   name:'Digital Temperature Controller',   cat:'parts',icon:'controller',tag:'−50 to 99°C', spec:'NTC probe · 10 A relay',           price:3200,   stock:'In stock',  zones:['-40','-18','4','65'] },
+    { id:'gsk',   name:'Magnetic Door Gasket, 6 ft',       cat:'parts',icon:'gasket',   tag:'Universal',    spec:'Cut-to-fit · PVC magnetic',        price:1800,   stock:'In stock',  zones:['-18','4'] },
+    { id:'fan',   name:'Condenser Fan Motor',              cat:'parts',icon:'fan',      tag:'220 V',        spec:'16 W · 10 in blade included',      price:5500,   stock:'In stock',  zones:['-18','4'] },
+    { id:'r404',  name:'Refrigerant R404a, 10.9 kg',       cat:'parts',icon:'cylinder', tag:'R404a',        spec:'Cylinder · for freezers',          price:38000,  stock:'In stock',  zones:['-40','-18'] },
+    { id:'tcl',   name:'Thermocouple & Burner Jet Set',    cat:'parts',icon:'burner',   tag:'Gas',          spec:'For fryers and griddles',          price:2400,   stock:'In stock',  zones:['65','180','250'] }
+  ];
+  const PLANS = [
+    { id:'amc1', name:'Essential', icon:'wrench', price:12000, visits:'2 visits a year', pts:['Condenser and coil cleaning','Gas pressure and thermostat check','Written service report'], note:'Good for one or two units.' },
+    { id:'amc2', name:'Kitchen', icon:'wrench', price:22000, visits:'4 visits a year', pts:['Everything in Essential','Burner, valve and gas line inspection','Priority breakdown callout'], note:'Built for a restaurant kitchen.', pick:true },
+    { id:'amc3', name:'Full cover', icon:'wrench', price:45000, visits:'6 visits a year', pts:['Everything in Kitchen','Labour on repairs included','Cold room and hot line covered'], note:'For hotels and cold stores.' }
+  ];
+  const ALL = P.concat(PLANS.map(p => ({ id:p.id, name:'Maintenance plan: ' + p.name, cat:'plan', icon:'wrench', price:p.price, spec:p.visits, zones:[] })));
+  const byId = id => ALL.find(x => x.id === id);
+
+  const STOPS = [
+    { z:'-40', t:'−40°C', n:'Blast and deep freeze', d:'Bulk frozen stock, ice cream and meat. This is the hardest range on a compressor, so gas charge and a clean condenser matter most.', c:'text-ice' },
+    { z:'-18', t:'−18°C', n:'Frozen storage', d:'The standard setpoint for frozen food. Worn door gaskets and failed defrost cycles cause most faults at this temperature.', c:'text-ice' },
+    { z:'4',   t:'4°C',   n:'Chilled display', d:'Dairy, drinks and desserts stay safe between 2 and 8°C. A drifting thermostat is the usual cause when a chiller warms up.', c:'text-ice' },
+    { z:'65',  t:'65°C',  n:'Hot holding', d:'Cooked food waits for service above 60°C. Elements and controllers in warmers wear out first.', c:'text-gold-300' },
+    { z:'180', t:'180°C', n:'Deep frying', d:'Gas fryers hold oil near 180°C. Thermocouples and thermostats are the parts that fail.', c:'text-ember' },
+    { z:'250', t:'250°C', n:'Grilling and roasting', d:'Griddles and shawarma lines run hottest. Grease clogs burner jets and the flame turns uneven.', c:'text-ember' }
+  ];
+  const CATS = [
+    { k:'cold',  t:'Cold chain', d:'Chillers, freezers, cold rooms', icon:'chiller', tint:'text-ice' },
+    { k:'hot',   t:'Hot kitchen', d:'Fryers, griddles, warmers', icon:'fryer', tint:'text-ember' },
+    { k:'parts', t:'Spare parts', d:'Compressors, gaskets, controllers', icon:'compressor', tint:'text-gold-700' },
+    { k:'service', t:'Repair & service', d:'Book a technician visit', icon:'wrench', tint:'text-navy-600' }
+  ];
+  const CNAME = { all:'All', cold:'Cold chain', hot:'Hot kitchen', parts:'Spare parts' };
+
+  const ic = (id, cls) => '<svg class="' + cls + '" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
+
+  /* ---------- State ---------- */
+  const S = { cat:'all', q:'', zone:null, sort:'featured', cart:{}, stop:1 };
+  try { S.cart = JSON.parse(localStorage.getItem('mashallah-cart') || '{}') || {}; } catch (e) { S.cart = {}; }
+  const save = () => { try { localStorage.setItem('mashallah-cart', JSON.stringify(S.cart)); } catch (e) {} };
+
+  let toastTimer;
+  function toast(msg) {
+    const t = $('#toast'); t.textContent = msg;
+    t.classList.remove('opacity-0','translate-y-2');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.add('opacity-0','translate-y-2'), 2200);
+  }
+
+  /* ---------- Hero gauge ---------- */
+  function renderGauge() {
+    const g = $('#gauge');
+    g.innerHTML = STOPS.map((s, i) => {
+      const on = i === S.stop;
+      return '<button role="radio" aria-checked="' + on + '" tabindex="' + (on ? 0 : -1) + '" data-i="' + i + '" class="flex flex-col items-center gap-2 pb-3 pt-1 ' + (on ? 'text-white' : 'text-navy-200 hover:text-white') + '">' +
+        '<span class="font-mono num text-xs sm:text-sm ' + (on ? 'font-medium' : '') + '">' + s.t + '</span>' +
+        '<span class="w-px h-3 ' + (on ? 'bg-gold-400' : 'bg-navy-600') + '"></span></button>';
+    }).join('');
+    $('#thumb').style.left = ((S.stop + 0.5) / STOPS.length * 100) + '%';
+    const s = STOPS[S.stop];
+    const T = $('#gTemp'); T.textContent = s.t; T.className = 'font-display font-extrabold text-6xl sm:text-7xl num leading-none ' + s.c;
+    $('#gName').textContent = s.n;
+    $('#gText').textContent = s.d;
+    const list = P.filter(p => p.zones.includes(s.z)).sort((a, b) => (a.cat === 'parts') - (b.cat === 'parts'));
+    $('#gProducts').innerHTML = list.slice(0, 3).map(p =>
+      '<li class="flex items-center gap-4 py-3">' + ic(p.icon, 'w-9 h-9 text-gold-300 shrink-0') +
+      '<div class="min-w-0 flex-1"><p class="font-medium truncate">' + p.name + '</p><p class="font-mono text-xs text-navy-200 truncate">' + p.spec + '</p></div>' +
+      '<p class="num text-sm text-navy-200 hidden sm:block">' + (p.price ? fmt(p.price) : 'Quote') + '</p>' +
+      '<button data-add="' + p.id + '" class="text-sm font-medium border border-navy-600 px-3 py-1.5 hover:border-gold-400 hover:text-gold-300">' + (p.price ? 'Add' : 'Ask') + '</button></li>'
+    ).join('');
+    $('#gShop').textContent = 'Show all ' + list.length + ' items for ' + s.t + ' in the shop';
+  }
+  $('#gauge').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { S.stop = +b.dataset.i; renderGauge(); $('#gauge [aria-checked="true"]').focus(); } });
+  $('#gauge').addEventListener('keydown', e => {
+    if (!['ArrowLeft','ArrowRight'].includes(e.key)) return;
+    e.preventDefault();
+    S.stop = Math.min(STOPS.length - 1, Math.max(0, S.stop + (e.key === 'ArrowRight' ? 1 : -1)));
+    renderGauge(); $('#gauge [aria-checked="true"]').focus();
+  });
+  $('#gShop').addEventListener('click', () => { S.zone = STOPS[S.stop].z; S.cat = 'all'; S.q = ''; $('#searchBox').value = ''; renderShop(); $('#shop').scrollIntoView(); });
+
+  /* ---------- Categories ---------- */
+  function renderCats() {
+    const count = k => P.filter(p => p.cat === k).length;
+    $('#cats').innerHTML = CATS.map(c =>
+      '<a href="' + (c.k === 'service' ? '#services' : '#shop') + '" data-cat="' + c.k + '" class="catlink bg-white p-5 flex items-center gap-4 hover:bg-navy-50 group">' +
+      ic(c.icon, 'w-12 h-12 shrink-0 ' + c.tint) +
+      '<span class="min-w-0"><span class="block font-display font-bold text-lg">' + c.t + '</span><span class="block text-sm text-navy-600">' + c.d + '</span>' +
+      (c.k !== 'service' ? '<span class="block font-mono text-xs text-gold-700 mt-1 num">' + count(c.k) + ' products</span>' : '') + '</span></a>'
+    ).join('');
+  }
+  $('#cats').addEventListener('click', e => {
+    const a = e.target.closest('.catlink'); if (!a || a.dataset.cat === 'service') return;
+    S.cat = a.dataset.cat; S.zone = null; renderShop();
+  });
+
+  /* ---------- Shop ---------- */
+  function renderFilters() {
+    $('#filters').innerHTML = Object.keys(CNAME).map(k => {
+      const n = k === 'all' ? P.length : P.filter(p => p.cat === k).length;
+      const on = S.cat === k;
+      return '<button data-k="' + k + '" aria-pressed="' + on + '" class="px-4 py-2 text-sm font-medium border ' + (on ? 'bg-navy-900 text-white border-navy-900' : 'bg-white border-line hover:border-navy-600') + '">' + CNAME[k] + ' <span class="num opacity-60">' + n + '</span></button>';
+    }).join('');
+  }
+  $('#filters').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { S.cat = b.dataset.k; renderShop(); } });
+  $('#sortSel').addEventListener('change', e => { S.sort = e.target.value; renderShop(); });
+  $('#searchForm').addEventListener('submit', e => { e.preventDefault(); $('#shop').scrollIntoView(); });
+  $('#searchBox').addEventListener('input', e => { S.q = e.target.value.trim().toLowerCase(); renderShop(); });
+
+  function card(p) {
+    const tone = p.cat === 'cold' ? 'bg-ice/15 text-navy-800' : p.cat === 'hot' ? 'bg-ember/10 text-navy-800' : 'bg-navy-50 text-navy-800';
+    const dot = p.stock === 'In stock' ? 'bg-emerald-600' : 'bg-gold-500';
+    return '<article class="bg-white border border-line flex flex-col">' +
+      '<div class="relative ' + tone + ' h-44 grid place-items-center">' + ic(p.icon, 'w-24 h-24') +
+      '<span class="absolute left-3 top-3 bg-white text-navy-900 font-mono text-[11px] px-2 py-1 border border-line num">' + p.tag + '</span></div>' +
+      '<div class="p-4 flex flex-col flex-1">' +
+      '<p class="font-mono text-[11px] uppercase tracking-[.15em] text-gold-700">' + CNAME[p.cat] + '</p>' +
+      '<h3 class="font-display font-bold text-lg leading-snug mt-1">' + p.name + '</h3>' +
+      '<p class="font-mono text-xs text-navy-600 mt-2">' + p.spec + '</p>' +
+      '<p class="text-xs text-navy-600 mt-3 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full ' + dot + '"></span>' + p.stock + '</p>' +
+      '<div class="mt-auto pt-4 flex items-center justify-between gap-3">' +
+      '<p class="font-display font-bold text-lg num">' + (p.price ? fmt(p.price) : '<span class="text-base">Get a quote</span>') + '</p>' +
+      '<button data-add="' + p.id + '" class="bg-navy-900 text-white text-sm font-medium px-4 py-2 hover:bg-navy-700">' + (p.price ? 'Add to cart' : 'Request') + '</button></div></div></article>';
+  }
+
+  function renderShop() {
+    let list = P.filter(p => (S.cat === 'all' || p.cat === S.cat) &&
+      (!S.zone || p.zones.includes(S.zone)) &&
+      (!S.q || (p.name + ' ' + p.spec + ' ' + p.tag + ' ' + CNAME[p.cat]).toLowerCase().includes(S.q)));
+    if (S.sort === 'low') list.sort((a, b) => (a.price ?? 1e12) - (b.price ?? 1e12));
+    if (S.sort === 'high') list.sort((a, b) => (b.price ?? -1) - (a.price ?? -1));
+    renderFilters();
+    $('#grid').innerHTML = list.map(card).join('');
+    $('#empty').classList.toggle('hidden', list.length > 0);
+    $('#resultCount').textContent = list.length + (list.length === 1 ? ' item' : ' items');
+    const az = $('#activeZone');
+    if (S.zone) {
+      const s = STOPS.find(x => x.z === S.zone);
+      az.hidden = false;
+      az.innerHTML = '<button id="clearZone" class="inline-flex items-center gap-2 bg-navy-900 text-white text-sm px-3 py-1.5">Showing ' + s.t + ' · ' + s.n + '<span aria-hidden="true">×</span><span class="sr-only">Clear temperature filter</span></button>';
+      $('#clearZone').onclick = () => { S.zone = null; renderShop(); };
+    } else az.hidden = true;
+  }
+
+  /* ---------- Plans ---------- */
+  function renderPlans() {
+    $('#planGrid').innerHTML = PLANS.map(p =>
+      '<article class="bg-white border ' + (p.pick ? 'border-navy-900' : 'border-line') + ' p-6 flex flex-col">' +
+      '<div class="flex items-start justify-between gap-3"><h3 class="font-display font-bold text-2xl">' + p.name + '</h3>' +
+      (p.pick ? '<span class="font-mono text-[11px] bg-gold-400 text-navy-950 px-2 py-1">Restaurants</span>' : '') + '</div>' +
+      '<p class="font-mono text-sm text-navy-600 mt-1">' + p.visits + '</p>' +
+      '<p class="font-display font-extrabold text-3xl num mt-5">' + fmt(p.price) + '<span class="text-sm font-medium text-navy-600"> / year</span></p>' +
+      '<ul class="mt-5 space-y-2.5 text-sm text-navy-700 flex-1">' + p.pts.map(t => '<li class="flex gap-2"><svg class="w-4 h-4 mt-0.5 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5 9-10"/></svg>' + t + '</li>').join('') + '</ul>' +
+      '<p class="text-xs text-navy-600 mt-5">' + p.note + '</p>' +
+      '<button data-add="' + p.id + '" class="mt-4 ' + (p.pick ? 'bg-navy-900 text-white hover:bg-navy-700' : 'border border-navy-900 hover:bg-navy-900 hover:text-white') + ' font-medium px-4 py-2.5">Add plan to cart</button></article>'
+    ).join('');
+  }
+
+  /* ---------- Cart ---------- */
+  function lines() { return Object.keys(S.cart).filter(id => byId(id) && S.cart[id] > 0).map(id => ({ p: byId(id), q: S.cart[id] })); }
+  function count() { return lines().reduce((n, l) => n + l.q, 0); }
+  function total() { return lines().reduce((n, l) => n + (l.p.price ? l.p.price * l.q : 0), 0); }
+
+  function add(id) { S.cart[id] = (S.cart[id] || 0) + 1; save(); renderCart(); const p = byId(id); toast(p.price ? 'Added: ' + p.name : 'Added to your enquiry: ' + p.name); }
+
+  function orderText(name, phone, addr) {
+    const L = lines();
+    let t = 'Hello Mashallah Enterprises, I would like to order:\n';
+    L.forEach(l => { t += '- ' + l.p.name + ' x' + l.q + (l.p.price ? ' (' + fmt(l.p.price * l.q) + ')' : ' (quote needed)') + '\n'; });
+    t += 'Total of priced items: ' + fmt(total()) + '\n';
+    if (name) t += 'Name: ' + name + '\n';
+    if (phone) t += 'Phone: ' + phone + '\n';
+    if (addr) t += 'Delivery address: ' + addr + '\n';
+    return t;
+  }
+
+  let placed = null;
+  function renderCart() {
+    $('#cartCount').textContent = count();
+    const body = $('#cartBody'), foot = $('#cartFoot');
+    if (placed) {
+      body.innerHTML = '<div class="py-10"><p class="font-mono text-xs tracking-[.2em] uppercase text-gold-700">Order ready</p><h3 class="font-display font-bold text-2xl mt-2">Thank you, ' + placed.name + '.</h3><p class="text-navy-700 mt-3 leading-relaxed">Your order reference is <span class="font-mono num">' + placed.ref + '</span>. This prototype does not store orders, so send the order on WhatsApp and our team will confirm price, delivery and installation.</p><a target="_blank" rel="noopener" href="https://wa.me/' + WA + '?text=' + encodeURIComponent(placed.text) + '" class="inline-block mt-5 bg-navy-900 text-white font-semibold px-5 py-3 hover:bg-navy-700">Send order on WhatsApp</a></div>';
+      foot.innerHTML = '<button id="newOrder" class="text-sm underline underline-offset-4">Start a new order</button>';
+      $('#newOrder').onclick = () => { placed = null; renderCart(); };
+      return;
+    }
+    const L = lines();
+    if (!L.length) {
+      body.innerHTML = '<div class="py-16 text-center"><p class="font-display font-bold text-xl">Your cart is empty</p><p class="text-navy-600 mt-2 text-sm">Add equipment, spare parts or a maintenance plan.</p><button data-close class="mt-5 bg-navy-900 text-white px-5 py-2.5 font-medium">Keep shopping</button></div>';
+      foot.innerHTML = ''; return;
+    }
+    body.innerHTML = '<ul class="divide-y divide-line">' + L.map(l =>
+      '<li class="py-4 flex gap-3"><div class="w-14 h-14 bg-mist grid place-items-center shrink-0">' + ic(l.p.icon, 'w-9 h-9 text-navy-800') + '</div>' +
+      '<div class="min-w-0 flex-1"><p class="font-medium leading-snug">' + l.p.name + '</p><p class="num text-sm text-navy-600 mt-0.5">' + (l.p.price ? fmt(l.p.price) : 'Quote on request') + '</p>' +
+      '<div class="flex items-center gap-3 mt-2"><div class="flex items-center border border-line">' +
+      '<button data-dec="' + l.p.id + '" class="w-8 h-8 hover:bg-mist" aria-label="Decrease quantity">&minus;</button><span class="num w-8 text-center text-sm">' + l.q + '</span><button data-inc="' + l.p.id + '" class="w-8 h-8 hover:bg-mist" aria-label="Increase quantity">+</button></div>' +
+      '<button data-rm="' + l.p.id + '" class="text-xs text-navy-600 underline underline-offset-2 hover:text-ember">Remove</button></div></div>' +
+      '<p class="num font-medium text-sm">' + (l.p.price ? fmt(l.p.price * l.q) : '') + '</p></li>'
+    ).join('') + '</ul>';
+    foot.innerHTML =
+      '<div class="flex justify-between items-baseline"><span class="text-navy-600">Subtotal</span><span class="font-display font-bold text-xl num">' + fmt(total()) + '</span></div>' +
+      '<p class="text-xs text-navy-600 mt-1">Delivery, installation and any quote-only items are confirmed by our team.</p>' +
+      '<form id="coForm" class="mt-4 grid gap-3" novalidate>' +
+      '<div><label for="coName" class="sr-only">Name</label><input id="coName" placeholder="Your name" class="w-full border border-line px-3 py-2.5 outline-none focus:border-navy-600" autocomplete="name"></div>' +
+      '<div><label for="coPhone" class="sr-only">Phone</label><input id="coPhone" inputmode="tel" placeholder="Phone number" class="w-full border border-line px-3 py-2.5 outline-none focus:border-navy-600" autocomplete="tel"></div>' +
+      '<div><label for="coAddr" class="sr-only">Delivery address</label><input id="coAddr" placeholder="Delivery address" class="w-full border border-line px-3 py-2.5 outline-none focus:border-navy-600" autocomplete="street-address"></div>' +
+      '<p id="coErr" class="text-ember text-sm hidden">Add your name and phone number to continue.</p>' +
+      '<button class="bg-gold-400 text-navy-950 font-semibold py-3 hover:bg-gold-300">Place order</button></form>';
+    $('#coForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const n = $('#coName').value.trim(), p = $('#coPhone').value.trim(), a = $('#coAddr').value.trim();
+      if (!n || !p) { $('#coErr').classList.remove('hidden'); return; }
+      const ref = 'ME-' + Math.floor(10000 + Math.random() * 89999);
+      placed = { name: n, ref: ref, text: orderText(n, p, a) + 'Reference: ' + ref };
+      S.cart = {}; save(); renderCart();
+    });
+  }
+
+  const drawer = $('#drawer'), scrim = $('#scrim');
+  function openCart() {
+    drawer.classList.remove('translate-x-full'); drawer.setAttribute('aria-hidden', 'false');
+    scrim.classList.remove('opacity-0', 'pointer-events-none'); document.body.style.overflow = 'hidden';
+    $('#closeCart').focus();
+  }
+  function closeCart() {
+    drawer.classList.add('translate-x-full'); drawer.setAttribute('aria-hidden', 'true');
+    scrim.classList.add('opacity-0', 'pointer-events-none'); document.body.style.overflow = '';
+    $('#cartBtn').focus();
+  }
+  $('#cartBtn').onclick = openCart; $('#closeCart').onclick = closeCart; scrim.onclick = closeCart;
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.getAttribute('aria-hidden') === 'false') closeCart(); });
+
+  document.addEventListener('click', e => {
+    const t = e.target.closest('[data-add],[data-inc],[data-dec],[data-rm],[data-close],.copy'); if (!t) return;
+    if (t.dataset.add) add(t.dataset.add);
+    else if (t.dataset.inc) { S.cart[t.dataset.inc]++; save(); renderCart(); }
+    else if (t.dataset.dec) { S.cart[t.dataset.dec] = Math.max(0, S.cart[t.dataset.dec] - 1); save(); renderCart(); }
+    else if (t.dataset.rm) { delete S.cart[t.dataset.rm]; save(); renderCart(); }
+    else if (t.hasAttribute('data-close')) closeCart();
+    else if (t.classList.contains('copy')) {
+      const v = t.dataset.copy;
+      const ok = () => { t.textContent = 'Copied'; setTimeout(() => t.textContent = 'Copy', 1400); };
+      (navigator.clipboard ? navigator.clipboard.writeText(v).then(ok) : Promise.reject()).catch(() => {
+        const r = document.createRange(); r.selectNodeContents(t.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      });
+    }
+  });
+
+  /* ---------- Booking form ---------- */
+  const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  $('#bDate').min = today.toISOString().slice(0, 10);
+  $('#bookForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const n = $('#bName').value.trim(), p = $('#bPhone').value.trim();
+    if (!n || !p) { $('#bErr').classList.remove('hidden'); return; }
+    $('#bErr').classList.add('hidden');
+    const msg = 'Hello Mashallah Enterprises, I need a technician visit.\n' +
+      'Name: ' + n + '\nPhone: ' + p + '\nEquipment: ' + $('#bEquip').value +
+      '\nProblem: ' + ($('#bIssue').value.trim() || 'Not stated') +
+      '\nPreferred date: ' + ($('#bDate').value || 'Any day') +
+      '\nAddress: ' + ($('#bAddr').value.trim() || 'Will share on call');
+    $('#bWa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+    $('#bDone').hidden = false;
+  });
+
+  /* ---------- Init ---------- */
+  renderGauge(); renderCats(); renderShop(); renderPlans(); renderCart();
+})();
+</script>
+</body>
+</html>
